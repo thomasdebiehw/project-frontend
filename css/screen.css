@@ -91,7 +91,7 @@ dl,
 table,
 address,
 figure {
-  margin: 0 0 24px;
+  /*margin: 0 0 24px;*/
 
 }
 
@@ -652,6 +652,8 @@ a:focus {
 
 .c-header__nav {
   display: none;
+  background-color: #B1E68A;
+  border-radius: 24px;
 }
 
 @media (min-width: 992px) {
@@ -669,6 +671,7 @@ a:focus {
 .c-nav {
   font-size: 16px;
   line-height: 24px;
+  padding: 0 10px;
 }
 
 .c-nav__link {
@@ -681,12 +684,12 @@ a:focus {
 .c-nav__link,
 .c-nav__link:visited,
 .c-nav__link:active {
-  color: #AFB3B1;
+  color: #30332E;
 }
 
 .c-nav__link:hover,
 .c-nav__link:focus {
-  color: #3EC18F;
+  color: #30332E;
 }
 
 @media (min-width: 992px) {
