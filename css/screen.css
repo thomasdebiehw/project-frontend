@@ -713,6 +713,10 @@ a:focus {
 .c-nav-dropdown:hover .c-nav-dropdown-content {
   display: block;
 }
+.c-nav-indent
+{
+  padding-left: 10px;
+}
 
 @media (min-width: 992px) {
   .c-nav__list {
