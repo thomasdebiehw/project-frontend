@@ -11,7 +11,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/screen.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+        integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script defer src="script/dataHandler.js"></script>
+    <script defer src="script/index_script.js"></script>
 </head>
 
 <body>
@@ -77,19 +80,20 @@
         Home
     </h2>
     <p>
-        <h3>No events</h3>Heating on
+        <h3 id="event">No events</h3>
+        <div id="heating-status">Heating on</div>
     </p>
     <p>
         <div class="o-row">
-            <div class="u-1-of-3">Disarmed</div>
-            <div class="u-1-of-3">21.5°C</div>
-            <div class="u-1-of-3">23°C</div>
+            <div class="u-1-of-3" id="alarm-status">Disarmed</div>
+            <div class="u-1-of-3" id="current-temperature">21.5°C</div>
+            <div class="u-1-of-3" id="set-temperature">23°C</div>
         </div>
     </p>
-    <p>
+    <p id="heating-link">
         Heating and alarm linked
     </p>
-    <p>Heating will be turned off at 11PM</p>
+    <p id="heating-schedule">Heating will be turned off at 11PM</p>
     <footer>
         <p> <strong>Alarmostat</strong></p>
     </footer>
