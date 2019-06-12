@@ -26,7 +26,7 @@ const init = function () {
     domHeatingStatus = document.getElementById("heating-status")
     domCurrentTemp = document.getElementById("current-temperature");
     domSetTemp = document.getElementById("set-temperature");
-    socket.on("connected", function(data) {
+    socket.on("index_emit", function(data) {
         console.log(data)
         domHeatingStatus.innerHTML = data.heating_status;
         domAlarmStatus.innerHTML = data.alarm_status;
