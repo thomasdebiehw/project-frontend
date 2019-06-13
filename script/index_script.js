@@ -20,16 +20,30 @@ const showSetTempDisplay = function () {
         domSetTempDisp.innerHTML = '';
     });
 };
-const showNewAlarmRaisedEvents = function(data) {
-    console.log(data);
-    domAlarmRaisedEvents.innerHTML = `<p>`;
-    data.forEach(element => {
-        domAlarmRaisedEvents.innerHTML += `${element[0]} ${element[1]} ${element[2]} ${element[3]} ${element[4]} ${element[5]} <br>`;
-    });
-    domAlarmRaisedEvents.innerHTML += `</p>`;
-
+const setEventAck = function(data){
+    console.log('ack')
+    socket.emit('acknowledge_event', data)
 
 }
+const showNewAlarmRaisedEvents = function(data) {
+    console.log(data);
+    elementArr = [];
+    domAlarmRaisedEvents.innerHTML = `<p>`;
+    data.forEach(element => {
+        domAlarmRaisedEvents.innerHTML += `<div id="${element[0]}">${element[0]} ${element[1]} ${element[2]} ${element[3]} ${element[4]} ${element[5]}</div><br>`;
+        elementArr.push(element[0])
+
+    });
+    console.log(elementArr);
+    
+    domAlarmRaisedEvents.innerHTML += `</p>`;
+    elementArr.forEach(element => {
+        document.getElementById(element).addEventListener('click', function(){
+            setEventAck(element);
+        });
+    });
+}
+
 //#endregion
 //#region ***********  Data Access ***********
 // get_______
