@@ -7,6 +7,7 @@ let domEvents
 const setEventAck = function(data){
     console.log('ack')
     socket.emit('acknowledge_event', data)
+    getEvents();
 
 }
 const showEvents = function(data) {
@@ -14,9 +15,9 @@ const showEvents = function(data) {
     elementArr = [];
     domEvents.innerHTML = `<p>`;
     data.forEach(element => {
-        domEvents.innerHTML += `<div>Event ID: ${element.idevent}<br>Timestamp: ${element.eventdatetime}<br>Type: ${element.eventtype}<br>Component: ${element.idcomponent}<br>User: ${element.iduser}<br>`;
+        domEvents.innerHTML += `<div>Event ID: ${element.idevent}<br>Timestamp: ${element.eventdatetime}<br>Type: ${element.eventtype}<br>Component: ${element.componentname}<br>User: ${element.username}<br>`;
         if (element.acknowledged != 1){
-            domEvents.innerHTML+= `<button type="button" id="${element.idevent}">Mark as read</button></div><br>`
+            domEvents.innerHTML+= `<button type="button" id="${element.idevent}">Mark as read</button></div><br><br>`
             elementArr.push(element.idevent)
         }
         else{
