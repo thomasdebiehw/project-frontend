@@ -1,6 +1,6 @@
 const IP = '169.254.10.1:5000';
 const socket = io.connect(IP);
-let domAlarmStatus, domHeatingStatus, domAlarmRaisedEvents, domCurrentTemp, domSetTemp, domSetTempDisp
+let domAlarmStatus, domHeatingStatus, domAlarmRaisedEvents, domCurrentTemp, domSetTemp, domSetTempDisp, domHeatingLink
 //#region ***********  Callback - HTML Generation (After select) or on socket event ***********
 // show________
 const showIndexData = function (data) {
@@ -67,6 +67,7 @@ const init = function () {
     domCurrentTemp = document.getElementById('current-temperature');
     domSetTemp = document.getElementById('set-temperature');
     domSetTempDisp = document.getElementById('change-temperature');
+    domHeatingLink = document.getElementById('heating-link');
     domAlarmStatus.addEventListener('click', function () {
         socket.emit('toggle_alarm');
     })
@@ -79,8 +80,15 @@ const init = function () {
     });
     socket.on('new_alarm_raised_events', function (data) {
         showNewAlarmRaisedEvents(data);
-
     });
+    socket.on('heating-linked', function(data){
+        if (data == true){
+            domHeatingLink.innerHTML= 'Heating and alarm linked';
+        }
+        else {
+            domHeatingLink.innerHTML= 'Heating and alarm are not linked';
+        }
+    })
 };
 
 
