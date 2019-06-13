@@ -15,7 +15,7 @@ const showEvents = function(data) {
     elementArr = [];
     domEvents.innerHTML = `<p>`;
     data.forEach(element => {
-        domEvents.innerHTML += `<div>Event ID: ${element.idevent}<br>Timestamp: ${element.eventdatetime}<br>Type: ${element.eventtype}<br>Component: ${element.componentname}<br>User: ${element.username}<br>`;
+        domEvents.innerHTML += `<div>Timestamp: ${element.eventdatetime}<br>Type: ${element.eventtype}<br>Component: ${element.componentname}<br>User: ${element.username}<br>`;
         if (element.acknowledged != 1){
             domEvents.innerHTML+= `<button type="button" id="${element.idevent}">Mark as read</button></div><br><br>`
             elementArr.push(element.idevent)
