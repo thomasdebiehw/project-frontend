@@ -1,2 +1,4 @@
-# HTML5 boilerplate Thomas Debie
-This is my HTML5 boilerplate. I use it to build fast, robust, and adaptable web apps or sites.
+# Project Alarmostat frontend
+This is the frontend for my Alarmostat project. It's a site that connects to a Flask backend via socketio and standard routes.
+link to the backend: https://github.com/thomasdebiehw/project-backend
+
