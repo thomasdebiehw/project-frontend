@@ -1,31 +1,40 @@
 const IP = '169.254.10.1:5000';
+const socket = io.connect(IP);
 let domEvents
 //#region ***********  Callback - HTML Generation (After select) or on socket event ***********
 // show________
-/*
+
 const setEventAck = function(data){
     console.log('ack')
     socket.emit('acknowledge_event', data)
 
 }
-const showNewAlarmRaisedEvents = function(data) {
+const showEvents = function(data) {
     console.log(data);
     elementArr = [];
-    domAlarmRaisedEvents.innerHTML = `<p>`;
+    domEvents.innerHTML = `<p>`;
     data.forEach(element => {
-        domAlarmRaisedEvents.innerHTML += `<div id="${element[0]}">${element[0]} ${element[1]} ${element[2]} ${element[3]} ${element[4]} ${element[5]}</div><br>`;
-        elementArr.push(element[0])
+        domEvents.innerHTML += `<div>Event ID: ${element.idevent}<br>Timestamp: ${element.eventdatetime}<br>Type: ${element.eventtype}<br>Component: ${element.idcomponent}<br>User: ${element.iduser}<br>`;
+        if (element.acknowledged != 1){
+            domEvents.innerHTML+= `<button type="button" id="${element.idevent}">Mark as read</button></div><br>`
+            elementArr.push(element.idevent)
+        }
+        else{
+            domEvents.innerHTML+= `</div><br>`
+        }
+        
 
     });
-    console.log(elementArr);
     
-    domAlarmRaisedEvents.innerHTML += `</p>`;
+    domEvents.innerHTML += `</p>`;
+    console.log(elementArr)
     elementArr.forEach(element => {
         document.getElementById(element).addEventListener('click', function(){
             setEventAck(element);
+            console.log(element)
         });
     });
-}*/
+}
 
 //#endregion
 //#region ***********  Data Access ***********
@@ -33,13 +42,15 @@ const showNewAlarmRaisedEvents = function(data) {
 const getTemperature = function () {
     handleData(`http://${IP}/api/v1/sensors/temperature`, showTemperature);
 }
-const getComponents = function () {
-    handleData(`http://${IP}/api/v1/components`, showComponents);
+const getEvents = function () {
+    handleData(`http://${IP}/api/v1/list/events`, showEvents);
 }
 //#endregion
 //#region ***********  INIT / DOMContentLoaded ***********
 const init = function () {
     console.log("loaded")
+    domEvents = document.getElementById('events');
+    getEvents();
 };
 
 
