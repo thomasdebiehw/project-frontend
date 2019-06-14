@@ -166,6 +166,7 @@ a:focus {
 .o-row{
   display: inline-block;
   width: 100%;
+
   
 }
 .o-layout {
@@ -729,7 +730,7 @@ a:focus {
 
 .c-data-center{
   text-align: center;
-  width: 50%;
+
   margin: auto;
 }
 
@@ -774,12 +775,16 @@ a:focus {
     font-size: 58px;
     line-height: 64px;
   }
+  .c-data-center{
+    max-width: 50%;
+  }
+
 
 }
 
 /* Large devices (landscape tablets, desktops, 992px and up) */
 @media (min-width: 992px) {
-
+  
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
