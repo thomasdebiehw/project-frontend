@@ -56,22 +56,21 @@
                 <div class="c-header__nav">
                     <nav class="c-nav">
                         <ul class="o-list c-nav__list">
-                            <li class="c-nav__item c-nav-dropdown"><a href="#!" class="c-nav__link">ALARM</a>
-                                <ul class="c-nav-dropdown-content o-list">
-                                    <li>Settings</li>
-                                    <ul class="o-list c-nav-indent">
-                                        <li><a href="sensor.html">Sensor behavior</a></li>
-                                        <li>Countdown settings</li>
-                                        <li>Siren settings</li>
-                                        <li>Key management</li>
-                                        <li>Test mode</li>
-                                    </ul>
-                                    <li><a href="event.html">Events</a></li>
-                                    <li>Full status overview</li>
-                                    <li>Users</li>
-                                </ul>
-                            </li>
+                            <li class="c-nav__item c-nav-dropdown"><a href="#!" class="c-nav__link">ALARM</a></li>
                             <li class="c-nav__item"><a href="#!" class="c-nav__link">THERMOSTAT</a></li>
+                        </ul>
+                        <ul class="c-nav-dropdown-content o-list">
+                            <li>Settings</li>
+                            <ul class="o-list c-nav-indent">
+                                <li><a href="sensor.html">Sensor behavior</a></li>
+                                <li>Countdown settings</li>
+                                <li>Siren settings</li>
+                                <li>Key management</li>
+                                <li>Test mode</li>
+                            </ul>
+                            <li><a href="event.html">Events</a></li>
+                            <li>Full status overview</li>
+                            <li>Users</li>
                         </ul>
                     </nav>
                 </div>
@@ -79,18 +78,21 @@
         </div>
         </div>
     </header>
+    <div class="c-data-center">
     <h2>
         Home
     </h2>
     <p>
-        <div id="alarm-raised-events"><h3>No events</h3></div>
+        <div id="alarm-raised-events">
+            <h3>No events</h3>
+        </div>
         <div id="heating-status">Heating on</div>
     </p>
     <p>
         <div class="o-row">
-            <div class="u-1-of-3" id="alarm-status">Disarmed</div>
-            <div class="u-1-of-3" id="current-temperature">21.5°C</div>
-            <div class="u-1-of-3" id="set-temperature">23°C</div>
+            <section class="u-1-of-3" id="alarm-status">Disarmed</section>
+            <section class="u-1-of-3" id="current-temperature">21.5°C</section>
+            <section class="u-1-of-3" id="set-temperature">23°C</section>
         </div>
     </p>
     <div id="change-temperature"></div>
@@ -101,6 +103,7 @@
     <footer>
         <p> <strong>Alarmostat</strong></p>
     </footer>
+</div>
 </body>
 
 </html>
