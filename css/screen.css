@@ -9,7 +9,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   line-height: 1.5;
-  font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #111;
   padding: 24px 24px 0;
   box-sizing: border-box;
@@ -181,6 +181,7 @@ a:focus {
   width: 100%;
 }
 
+
 /* gutter modifiers, these affect o-layout__item too */
 
 .o-layout--gutter {
@@ -336,6 +337,10 @@ a:focus {
     ---
     Utility classes to put specific margins and paddings onto elements
 */
+.u-text-center{
+  text-align: center;
+}
+
 
 .u-pt-clear {
   padding-top: 0 !important;
@@ -670,6 +675,15 @@ a:focus {
   min-width: 250px; 
 
 }
+.c-header__nav:hover .c-nav-dropdown-content{
+  display: block;
+}
+.c-header__title{
+  position: absolute;
+  left: 0%;
+  width: 100%;
+  z-index: -1;
+}
 
 @media (min-width: 992px) {
   .c-logo {
@@ -737,8 +751,8 @@ a:focus {
 
 .c-data-center{
   text-align: center;
-
-  margin: auto;
+  height: 60vh;
+  margin: 10vh auto 30vh;
 }
 
 @media (min-width: 992px) {
@@ -752,6 +766,10 @@ a:focus {
 
   .c-nav__link {
       padding: 4px 20px;
+  }
+  .c-data-center{
+    margin: auto;
+    height: unset;
   }
 }
 

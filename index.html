@@ -16,6 +16,7 @@
     <meta name="msapplication-TileColor" content="#00a300">
     <meta name="msapplication-config" content="/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/screen.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
@@ -83,6 +84,7 @@
                         </a>
                     </div>
                 </div>
+                <div class="c-header__title"><h2 class="u-text-center">Home</h2></div>
                 <div class="c-header__nav">
                     <nav class="c-nav">
                         <ul class="o-list c-nav__list">
@@ -108,32 +110,35 @@
         </div>
         </div>
     </header>
+    
     <div class="c-data-center">
-        <h2>
-            Home
-        </h2>
-        <p>
+       
+        <section>
             <div id="alarm-raised-events">
                 <i class="fas fa-check-circle fa-3x"></i>
-                <h3>No events</h3>
+                <h3 class="u-mb-clear">No events</h3>
+                <div id="heating-status">Heating on</div>
             </div>
-            <div id="heating-status">Heating on</div>
-        </p>
-        <p>
+            
+        </section>
+        <br>
+        <br>
+        <section>
             <div class="o-row o-layout">
                 <div class="o-layout__item u-1-of-3" id="alarm-status">Disarmed<br>ALARM STATUS</div>
                 <div class="o-layout__item u-1-of-3" id="current-temperature">21.5°C<br>CURRENT</div>
                 <div class="o-layout__item u-1-of-3" id="set-temperature">23°C<br>SET</div>
             </div>
-        </p>
+        </section>
+        <br>
+        <br>
+        <section>
         <div id="change-temperature"></div>
-        <p id="heating-link">
+        <div id="heating-link">
             Heating and alarm linked
-        </p>
-        <p id="heating-schedule">Heating will be turned off at 11PM</p>
-        <footer>
-            <p> <strong>Alarmostat</strong></p>
-        </footer>
+        </div>
+        <div id="heating-schedule">Heating will be turned off at 11PM</div>
+    </section>
     </div>
 </body>
 
