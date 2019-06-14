@@ -640,6 +640,7 @@ a:focus {
   height: 100px;
   display: flex;
   align-items: center;
+  display: none;
 }
 
 .c-logo__symbol {
@@ -668,6 +669,9 @@ a:focus {
 }
 
 @media (min-width: 992px) {
+  .c-logo {
+    display: block;
+  }
   .c-header__nav {
       display: block;
   }
