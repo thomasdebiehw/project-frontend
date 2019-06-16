@@ -4,7 +4,7 @@ let domCurrentTemp, domSetTemp, domSetTempSlider, boolTempReceived
 //#region ***********  Callback - HTML Generation (After select) or on socket event ***********
 // show________
 const showIndexData = function (data) {
-    domCurrentTemp.innerHTML = data.current_temperature + ' °C';
+    domCurrentTemp.innerHTML = data.current_temperature + '°C';
     if (boolTempReceived == false){
         boolTempReceived = true;
     domSetTemp.innerHTML = data.set_temperature + '°C';
@@ -45,6 +45,19 @@ const init = function () {
     domSetTempSlider.oninput = function(){
         domSetTemp.innerHTML = this.value + '°C';
     };
+    document.getElementById('minus').addEventListener('click', function(){
+        domSetTempSlider.value = parseFloat(domSetTempSlider.value) - 0.5;
+        domSetTemp.innerHTML = domSetTempSlider.value + '°C';
+    });
+    document.getElementById('plus').addEventListener('click', function(){
+        domSetTempSlider.value = parseFloat(domSetTempSlider.value) + 0.5;
+        console.log(domSetTempSlider.value)
+        domSetTemp.innerHTML = domSetTempSlider.value + '°C';
+    });
+    document.getElementById('save').addEventListener('click', function(){
+        socket.emit('change-temp', domSetTempSlider.value);
+        document.getElementById('confirm').innerHTML = 'Temperature Saved!'
+    })
 };
 
 
