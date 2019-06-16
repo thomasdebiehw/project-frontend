@@ -6,9 +6,9 @@ let domAlarmStatus, domHeatingStatus, domAlarmRaisedEvents, domCurrentTemp, domS
 const showIndexData = function (data) {
     console.log(data)
     domHeatingStatus.innerHTML = data.heating_status;
-    domAlarmStatus.innerHTML = data.alarm_status + '<br>ALARM STATUS';
-    domCurrentTemp.innerHTML = data.current_temperature + '<br>CURRENT';
-    domSetTemp.innerHTML = data.set_temperature + '<br>SET';
+    domAlarmStatus.innerHTML = '<a href="#">' + data.alarm_status + '<br>ALARM STATUS</a>';
+    domCurrentTemp.innerHTML = data.current_temperature + ' °C<br>CURRENT';
+    domSetTemp.innerHTML = '<a href="#">' + data.set_temperature + '°C <br>SET</a>';
 };
 const showSetTempDisplay = function () {
     domSetTempDisp.innerHTML = `<p><form>
