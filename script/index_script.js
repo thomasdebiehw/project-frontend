@@ -78,7 +78,7 @@ const init = function () {
         else {
             domHeatingLink.innerHTML= 'Heating and alarm are not linked';
         }
-    })
+    });
 };
 
 

@@ -23,6 +23,7 @@
         integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/4591184e87.js"></script>
     <script defer src="script/dataHandler.js"></script>
+    <script defer src="script/nav_script.js"></script>
     <script defer src="script/sensor_script.js"></script>
 </head>
 
@@ -92,10 +93,12 @@
                 <div class="c-header__nav">
                     <nav class="c-nav">
                         <ul class="o-list c-nav__list">
-                            <li class="c-nav__item c-nav-dropdown"><a href="#!" class="c-nav__link">ALARM</a></li>
-                            <li class="c-nav__item"><a href="#!" class="c-nav__link">THERMOSTAT</a></li>
+                            <li class="c-nav__item c-nav-dropdown" id="dropdown-alarm"><a href="#!"
+                                    class="c-nav__link">ALARM <i class="fas fa-caret-down black"></i></a></li>
+                            <li class="c-nav__item c-nav-dropdown" id="dropdown-thermostat"><a href="#!"
+                                    class="c-nav__link">THERMOSTAT <i class="fas fa-caret-down black"></i></a></li>
                         </ul>
-                        <ul class="c-nav-dropdown-content o-list">
+                        <ul class="c-nav-dropdown-content o-list" id="content-alarm">
                             <li><b>Settings</b></li>
                             <ul class="o-list c-nav-indent">
                                 <li><a href="sensor.html">Sensor behavior</a></li>
@@ -106,6 +109,16 @@
                             <li><b><a href="event.html">Events</a></b></li>
                             <li><b>Full status overview</b></li>
                             <li><b>Users</b></li>
+                        </ul>
+                        <ul class="c-nav-dropdown-content o-list" id="content-thermostat">
+                            <li><b>Settings</b></li>
+                            <ul class="o-list c-nav-indent">
+                                <li>Set temperature</li>
+                                <li>Schedule</li>
+                                <li>Behavior</li>
+                            </ul>
+                            <li><b>Temperature history</b></li>
+                            <li><b>Status</b></li>
                         </ul>
                     </nav>
                 </div>

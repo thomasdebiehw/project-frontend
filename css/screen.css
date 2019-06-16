@@ -171,6 +171,9 @@ a:focus {
 .red{
   color: #CC0C0C;
 }
+.black{
+  color:#30332E;
+}
 
 #alarm-desc{
   color: #F22727;
@@ -701,9 +704,6 @@ input[type=number]{
   min-width: 250px; 
 
 }
-.c-header__nav:hover .c-nav-dropdown-content{
-  display: block;
-}
 .c-header__title{
   position: absolute;
   left: 0%;
@@ -740,6 +740,7 @@ input[type=number]{
   font-weight: bold;
   display: block;
   padding: 4px 0;
+  margin: auto 2px;
 }
 
 .c-nav__link,
@@ -767,15 +768,21 @@ input[type=number]{
   background-color: #B1E68A;
 
 }
-.c-nav-dropdown-content:hover{
-  display: block;
-}
-.c-nav__list:hover + .c-nav-dropdown-content {
+.c-nav-dropdown-active{
   display: block;
 }
 .c-nav-indent
 {
   padding-left: 10px;
+}
+
+.c-mobile-nav {
+  position: fixed; 
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  display: block;
 }
 
 .c-data-center{
