@@ -676,6 +676,10 @@ input[type=number]{
 .c-logo__symbol {
   height: 100%;
 }
+.c-mobile-nav-icon{
+  height: 40px;
+  display: flex;
+}
 /*
     Component: header
     ---
@@ -710,6 +714,9 @@ input[type=number]{
 @media (min-width: 992px) {
   .c-logo {
     display: block;
+  }
+  .c-mobile-nav-icon{
+    display: none;
   }
   .c-header__nav {
       display: block;

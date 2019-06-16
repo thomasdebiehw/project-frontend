@@ -4,22 +4,22 @@ let domSensors, domHeating, domWalkin, domWalkout
 //#region ***********  Callback - HTML Generation (After select) or on socket event ***********
 // show________
 const showSensors = function(data){
-    domSensors.innerHTML = '';
+    domSensors.innerHTML = '<table>';
     sensorArr = []
     data.forEach(element => {
-        domSensors.innerHTML +=`<p>Model: ${element[0]}`
+        domSensors.innerHTML +=`<tr><td><b>Model: </b>${element[0]}`
         if (element[1] == true){
-            domSensors.innerHTML+= `<div id="${element[0]}">Walk-in: Yes</div></p><br>`
+            domSensors.innerHTML+= `<div id="${element[0]}"><b>Walk-in: <i class="fas fa-toggle-on"></b></i></div></p><br>`
         }
         else{
-            domSensors.innerHTML+= `<div id="${element[0]}">Walk-in: No</div></p><br>`
+            domSensors.innerHTML+= `<div id="${element[0]}"><b>Walk-in: <i class="fas fa-toggle-off"></i></b></div></p><br>`
         }
         sensorArr.push(element[0])
-        
+        domSensors.innerHTML += '</td></tr>'
     });
+    domSensors.innerHTML += '</table>'
     sensorArr.forEach(element=> {
         document.getElementById(element).addEventListener('click', function() {
-            console.log("oi")
             socket.emit("change-sensor-walkin", element);
         });
     });
@@ -38,7 +38,7 @@ const init = function () {
     domSensors = document.getElementById('sensors');
     domHeating = document.getElementById('heating');
     domWalkin = document.getElementById('walkin');
-    domWalkin.innerHTML = `<p><form>Walk-in timeout: 
+    domWalkin.innerHTML = `<p><form><b>Walk-in timeout: </b>
     <input type="number" name="timeout" min="1" max="100" step="1" id="walkin-val"> seconds 
     <input type="button" id="send-walkin" class="c-save-button" value="Save">
     </form></p>`;
@@ -47,7 +47,7 @@ const init = function () {
         domWalkin.innerHTML += ' Saved!';
     });
     domWalkout = document.getElementById('walkout');
-    domWalkout.innerHTML = `<p><form>Walk-out timeout: 
+    domWalkout.innerHTML = `<p><form><b>Walk-out timeout: </b>
     <input type="number" name="timeout" min="1" max="100" step="1" id="walkout-val"> seconds 
     <input type="button" id="send-walkout" class="c-save-button" value="Save">
     </form></p>`;
@@ -66,10 +66,10 @@ const init = function () {
     })
     socket.on('heating-linked', function(data){
         if (data == true){
-            domHeating.innerHTML= 'Heating linked: Yes';
+            domHeating.innerHTML= '<b>Heating linked: </b><i class="fas fa-toggle-on"></i>';
         }
         else {
-            domHeating.innerHTML= 'Heating linked: No';
+            domHeating.innerHTML= '<b>Heating linked: </b><i class="fas fa-toggle-off"></i>';
         }
         
     })
