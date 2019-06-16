@@ -24,14 +24,14 @@ html {
  */
 
 ::-moz-selection {
-  background: #E85E00;
+  background: #5AAD1A;
   color: white;
   text-shadow: none;
 
 }
 
 ::selection {
-background: #E85E00;
+background: #5AAD1A;
 color: white;
 text-shadow: none;
 }
@@ -778,6 +778,14 @@ a:focus {
   display: none;
 }
 
+#clear-btn{
+  background-color: #F45555;
+  border: none;
+  padding: 10px 35px;
+  color: white;
+  border-radius: 24px;
+  font-weight: bold;
+}
 @media (min-width: 992px) {
   .c-nav__list {
       display: flex;
