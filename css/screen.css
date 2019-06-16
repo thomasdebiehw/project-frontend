@@ -735,7 +735,10 @@ input[type=number]{
   right: 48px; 
   top: 48px; 
   min-width: 250px; 
-
+  
+}
+.c-header__nav{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 .c-header__title{
   position: absolute;
