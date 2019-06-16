@@ -5,25 +5,21 @@ let domEvents
 
 const showEvents = function(data) {
     console.log(data);
-    elementArr = [];
-    domEvents.innerHTML = `<p>`;
+    html = '';
+    html = `<table><tr><th>Timestamp</th><th>Type</th><th>Component</th><th>User</th></tr>`;
+
     data.forEach(element => {
-        domEvents.innerHTML += `<div>Timestamp: ${element.eventdatetime}<br>Type: ${element.eventtype}<br>Component: ${element.componentname}<br>User: ${element.username}<br>`;
-        domEvents.innerHTML+= `</div><br>`
+        html += `<tr><td>${element.eventdatetime}</td><td>${element.eventtype}</td><td>${element.componentname}</td><td>${element.username}</td></tr>`;
         
 
     });
-    
-    domEvents.innerHTML += `</p>`;
-    console.log(elementArr)
+    html += `</table>`;
+    domEvents.innerHTML = html
 }
 
 //#endregion
 //#region ***********  Data Access ***********
 // get_______
-const getTemperature = function () {
-    handleData(`http://${IP}/api/v1/sensors/temperature`, showTemperature);
-}
 const getEvents = function () {
     handleData(`http://${IP}/api/v1/list/events`, showEvents);
 }
