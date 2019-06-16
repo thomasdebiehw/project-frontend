@@ -84,7 +84,7 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="c-mobile-nav-icon">
+                    <div class="c-mobile-nav-icon js-toggle-nav">
                         <i class="fas fa-bars"></i>
                     </div>
                 </div>
@@ -126,6 +126,43 @@
         </div>
         </div>
     </header>
+    <div id="mobile-nav" class="c-mobile-nav">
+            <div class="c-mobile-nav-icon-mobile js-toggle-nav">
+                    <i class="fas fa-times black"></i>
+                </div>
+                <br>
+                <br>
+    <nav class="">
+        <ul class="o-list c-nav__list">
+            <li class="c-nav__item c-nav-dropdown" id="dropdown-alarm-mobile"><a href="#!"
+                    class="c-nav__link" id="def-menu">ALARM <i class="fas fa-caret-down black"></i></a></li>
+            <li class="c-nav__item c-nav-dropdown" id="dropdown-thermostat-mobile"><a href="#!"
+                    class="c-nav__link">THERMOSTAT <i class="fas fa-caret-down black"></i></a></li>
+        </ul>
+        <ul class="c-nav-dropdown-content o-list c-nav-dropdown-active" id="content-alarm-mobile">
+                <li><b><a href="index.html">Home - status overview</a></b></li>
+            <li><b>Settings</b></li>
+            <ul class="o-list c-nav-indent">
+                <li><a href="sensor.html">Sensor behavior</a></li>
+                <li>Siren settings</li>
+                <li>Key management</li>
+                <li>Test mode</li>
+            </ul>
+            <li><b><a href="event.html">Events</a></b></li>
+            <li><b>Users</b></li>
+        </ul>
+        <ul class="c-nav-dropdown-content o-list" id="content-thermostat-mobile">
+            <li><b>Settings</b></li>
+            <ul class="o-list c-nav-indent">
+                <li>Set temperature</li>
+                <li>Schedule</li>
+                <li>Behavior</li>
+            </ul>
+            <li><b>Temperature history</b></li>
+            <li><b>Status</b></li>
+        </ul>
+    </nav>
+</div>
     <div id="sensors"><p>Model: ADA375<br>Walk-in: Yes<br></p></div>
     <br>
     <div id="heating"><p>Heating linked: Yes</p></div>

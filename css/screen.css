@@ -717,6 +717,7 @@ input[type=number]{
   }
   .c-mobile-nav-icon{
     display: none;
+    
   }
   .c-header__nav {
       display: block;
@@ -776,12 +777,33 @@ input[type=number]{
   padding-left: 10px;
 }
 
+
 .c-mobile-nav {
-  position: fixed; 
+  position: absolute; 
   top: 0;
   right: 0;
   left: 0;
   height: 100vh;
+  padding: 24px 48px;
+  line-height: 36px;
+  background-color: #B1E68A; 
+  display: none;
+}
+
+.c-mobile-nav .c-nav__link {
+  padding: 4px 16px;
+}
+.c-mobile-nav .c-mobile-nav-icon-mobile{
+  position: fixed;
+  top: 24px;
+  left: 24px;
+}
+
+.c-mobile-nav .c-nav__list {
+  text-align: center;
+}
+
+.c-mobile-nav-disp{
   display: block;
 }
 
@@ -820,6 +842,10 @@ input[type=number]{
   .c-nav__item--cta {
       margin-left: 20px;
   }
+  .c-mobile-nav {
+    display: none;
+  }
+  
 
   .c-nav__link {
       padding: 4px 20px;
