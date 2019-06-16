@@ -1,5 +1,4 @@
-//const IP = location.hostname + ':5000';
-const IP = '192.168.0.128:5000';
+const IP = location.hostname + ':5000';
 let domMeasurements, domMeasurementsDesk
 //#region ***********  Callback - HTML Generation (After select) or on socket event ***********
 // show________
