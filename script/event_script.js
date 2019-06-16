@@ -3,12 +3,12 @@ let domEvents, domEventsDesk
 //#region ***********  Callback - HTML Generation (After select) or on socket event ***********
 // show________
 
-const showEvents = function(data) {
+const showEvents = function (data) {
     console.log(data);
     html = `<table>`;
     htmldesk = '<table>'
     htmldesk = `<table><tr><th>Timestamp</th><th>Type</th><th>Component</th><th>User</th></tr>`;
-    
+
 
     data.forEach(element => {
         html += `<tr><td><b>${element.eventdatetime}</b></td><td>
@@ -18,7 +18,7 @@ const showEvents = function(data) {
         <br>
         </td></tr>`;
         htmldesk += `<tr><td>${element.eventdatetime}</td><td>${element.eventtype}</td><td>${element.componentname}</td><td>${element.username}</td></tr>`;
-        
+
 
     });
     html += `</table>`;

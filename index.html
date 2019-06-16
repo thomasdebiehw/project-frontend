@@ -92,78 +92,64 @@
                     <h2 class="u-text-center">Home</h2>
                 </div>
                 <div class="c-header__nav">
-                        <nav class="c-nav">
-                            <ul class="o-list c-nav__list">
-                                <li class="c-nav__item c-nav-dropdown" id="dropdown-alarm"><a href="#!"
-                                        class="c-nav__link">ALARM <i class="fas fa-caret-down black"></i></a></li>
-                                <li class="c-nav__item c-nav-dropdown" id="dropdown-thermostat"><a href="#!"
-                                        class="c-nav__link">THERMOSTAT <i class="fas fa-caret-down black"></i></a></li>
+                    <nav class="c-nav">
+                        <ul class="o-list c-nav__list">
+                            <li class="c-nav__item c-nav-dropdown" id="dropdown-alarm"><a href="#!"
+                                    class="c-nav__link">ALARM <i class="fas fa-caret-down black"></i></a></li>
+                            <li class="c-nav__item c-nav-dropdown" id="dropdown-thermostat"><a href="#!"
+                                    class="c-nav__link">THERMOSTAT <i class="fas fa-caret-down black"></i></a></li>
+                        </ul>
+                        <ul class="c-nav-dropdown-content o-list" id="content-alarm">
+                            <li><b><a href="index.html">Home - status overview</a></b></li>
+                            <li><b>Settings</b></li>
+                            <ul class="o-list c-nav-indent">
+                                <li><a href="sensor.html">Sensor behavior</a></li>
                             </ul>
-                            <ul class="c-nav-dropdown-content o-list" id="content-alarm">
-                                    <li><b><a href="index.html">Home - status overview</a></b></li>
-                                <li><b>Settings</b></li>
-                                <ul class="o-list c-nav-indent">
-                                    <li><a href="sensor.html">Sensor behavior</a></li>
-                                    <li>Siren settings</li>
-                                    <li>Key management</li>
-                                    <li>Test mode</li>
-                                </ul>
-                                <li><b><a href="event.html">Events</a></b></li>
-                                <li><b>Users</b></li>
+                            <li><b><a href="event.html">Events</a></b></li>
+                        </ul>
+                        <ul class="c-nav-dropdown-content o-list" id="content-thermostat">
+                            <li><b>Settings</b></li>
+                            <ul class="o-list c-nav-indent">
+                                <li><a href="settemperature.html">Set temperature</a></li>
+                                <li>Behavior</li>
                             </ul>
-                            <ul class="c-nav-dropdown-content o-list" id="content-thermostat">
-                                <li><b>Settings</b></li>
-                                <ul class="o-list c-nav-indent">
-                                        <li><a href="settemperature.html">Set temperature</a></li>
-                                    <li>Schedule</li>
-                                    <li>Behavior</li>
-                                </ul>
-                                <li><b>Temperature history</b></li>
-                                <li><b>Status</b></li>
-                            </ul>
-                        </nav>
-                    </div>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
         </div>
     </header>
     <div id="mobile-nav" class="c-mobile-nav">
-            <div class="c-mobile-nav-icon-mobile js-toggle-nav">
-                    <i class="fas fa-times black"></i>
-                </div>
-                <br>
-                <br>
-                <nav class="">
-                        <ul class="o-list c-nav__list">
-                            <li class="c-nav__item c-nav-dropdown" id="dropdown-alarm-mobile"><a href="#!"
-                                    class="c-nav__link" id="def-menu">ALARM <i class="fas fa-caret-down black"></i></a></li>
-                            <li class="c-nav__item c-nav-dropdown" id="dropdown-thermostat-mobile"><a href="#!"
-                                    class="c-nav__link">THERMOSTAT <i class="fas fa-caret-down black"></i></a></li>
-                        </ul>
-                        <ul class="c-nav-dropdown-content o-list c-nav-dropdown-active" id="content-alarm-mobile">
-                                <li><b><a href="index.html">Home - status overview</a></b></li>
-                            <li><b>Settings</b></li>
-                            <ul class="o-list c-nav-indent">
-                                <li><a href="sensor.html">Sensor behavior</a></li>
-                                <li>Siren settings</li>
-                                <li>Key management</li>
-                                <li>Test mode</li>
-                            </ul>
-                            <li><b><a href="event.html">Events</a></b></li>
-                            <li><b>Users</b></li>
-                        </ul>
-                        <ul class="c-nav-dropdown-content o-list" id="content-thermostat-mobile">
-                            <li><b>Settings</b></li>
-                            <ul class="o-list c-nav-indent">
-                                    <li><a href="settemperature.html">Set temperature</a></li>
-                                <li>Schedule</li>
-                                <li>Behavior</li>
-                            </ul>
-                            <li><b>Temperature history</b></li>
-                            <li><b>Status</b></li>
-                        </ul>
-                    </nav>
-</div>
+        <div class="c-mobile-nav-icon-mobile js-toggle-nav">
+            <i class="fas fa-times black"></i>
+        </div>
+        <br>
+        <br>
+        <nav class="">
+            <ul class="o-list c-nav__list">
+                <li class="c-nav__item c-nav-dropdown" id="dropdown-alarm-mobile"><a href="#!" class="c-nav__link"
+                        id="def-menu">ALARM <i class="fas fa-caret-down black"></i></a></li>
+                <li class="c-nav__item c-nav-dropdown" id="dropdown-thermostat-mobile"><a href="#!"
+                        class="c-nav__link">THERMOSTAT <i class="fas fa-caret-down black"></i></a></li>
+            </ul>
+            <ul class="c-nav-dropdown-content o-list c-nav-dropdown-active" id="content-alarm-mobile">
+                <li><b><a href="index.html">Home - status overview</a></b></li>
+                <li><b>Settings</b></li>
+                <ul class="o-list c-nav-indent">
+                    <li><a href="sensor.html">Sensor behavior</a></li>
+                </ul>
+                <li><b><a href="event.html">Events</a></b></li>
+            </ul>
+            <ul class="c-nav-dropdown-content o-list" id="content-thermostat-mobile">
+                <li><b>Settings</b></li>
+                <ul class="o-list c-nav-indent">
+                    <li><a href="settemperature.html">Set temperature</a></li>
+                    <li>Behavior</li>
+                </ul>
+            </ul>
+        </nav>
+    </div>
     <div class="c-data-center">
 
         <section>

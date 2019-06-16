@@ -28,11 +28,10 @@ const showNewAlarmRaisedEvents = function (data) {
         domAlarmRaisedEvents.innerHTML += `</p>`;
         domAlarmDesc.innerHTML = `<p>${data.sensor} set off the alarm at ${data.time}. Check event log</p>`
         domAlarmDesc.innerHTML += '<input type="button" id="clear-btn" value="CLEAR ALARM STATUS">'
-        document.getElementById('clear-btn').addEventListener('click', function(){
+        document.getElementById('clear-btn').addEventListener('click', function () {
             socket.emit("clear-alarm-status");
         });
-    }
-    else {
+    } else {
         domAlarmRaisedEvents.innerHTML = '<i class="fas fa-check-circle fa-4x"></i><h3 class="u-mb-clear">No events</h3>';
         domAlarmDesc.innerHTML = '';
     }
@@ -71,12 +70,11 @@ const init = function () {
     socket.on('new_alarm_raised_events', function (data) {
         showNewAlarmRaisedEvents(data);
     });
-    socket.on('heating-linked', function(data){
-        if (data == true){
-            domHeatingLink.innerHTML= 'Heating and alarm linked';
-        }
-        else {
-            domHeatingLink.innerHTML= 'Heating and alarm are not linked';
+    socket.on('heating-linked', function (data) {
+        if (data == true) {
+            domHeatingLink.innerHTML = 'Heating and alarm linked';
+        } else {
+            domHeatingLink.innerHTML = 'Heating and alarm are not linked';
         }
     });
 };

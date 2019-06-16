@@ -3,23 +3,22 @@ const socket = io.connect(IP);
 let domSensors, domHeating, domWalkin, domWalkout
 //#region ***********  Callback - HTML Generation (After select) or on socket event ***********
 // show________
-const showSensors = function(data){
+const showSensors = function (data) {
     domSensors.innerHTML = '<table>';
     sensorArr = []
     data.forEach(element => {
-        domSensors.innerHTML +=`<tr><td><b>Model: </b>${element[0]}`
-        if (element[1] == true){
-            domSensors.innerHTML+= `<div id="${element[0]}"><b>Walk-in: <i class="fas fa-toggle-on"></b></i></div></p><br>`
-        }
-        else{
-            domSensors.innerHTML+= `<div id="${element[0]}"><b>Walk-in: <i class="fas fa-toggle-off"></i></b></div></p><br>`
+        domSensors.innerHTML += `<tr><td><b>Model: </b>${element[0]}`
+        if (element[1] == true) {
+            domSensors.innerHTML += `<div id="${element[0]}"><b>Walk-in: <i class="fas fa-toggle-on"></b></i></div></p><br>`
+        } else {
+            domSensors.innerHTML += `<div id="${element[0]}"><b>Walk-in: <i class="fas fa-toggle-off"></i></b></div></p><br>`
         }
         sensorArr.push(element[0])
         domSensors.innerHTML += '</td></tr>'
     });
     domSensors.innerHTML += '</table>'
-    sensorArr.forEach(element=> {
-        document.getElementById(element).addEventListener('click', function() {
+    sensorArr.forEach(element => {
+        document.getElementById(element).addEventListener('click', function () {
             socket.emit("change-sensor-walkin", element);
         });
     });
@@ -59,21 +58,20 @@ const init = function () {
         console.log(data)
         showSensors(data);
     });
-    socket.on('alarm_timeouts', function(data){
+    socket.on('alarm_timeouts', function (data) {
         console.log(data)
         document.getElementById("walkin-val").value = data.walkin;
         document.getElementById("walkout-val").value = data.walkout;
     })
-    socket.on('heating-linked', function(data){
-        if (data == true){
-            domHeating.innerHTML= '<b>Heating linked: </b><i class="fas fa-toggle-on"></i>';
+    socket.on('heating-linked', function (data) {
+        if (data == true) {
+            domHeating.innerHTML = '<b>Heating linked: </b><i class="fas fa-toggle-on"></i>';
+        } else {
+            domHeating.innerHTML = '<b>Heating linked: </b><i class="fas fa-toggle-off"></i>';
         }
-        else {
-            domHeating.innerHTML= '<b>Heating linked: </b><i class="fas fa-toggle-off"></i>';
-        }
-        
+
     })
-    domHeating.addEventListener('click', function(){
+    domHeating.addEventListener('click', function () {
         socket.emit('toggle-heating-link');
     })
 };

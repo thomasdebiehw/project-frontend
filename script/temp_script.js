@@ -5,10 +5,10 @@ let domCurrentTemp, domSetTemp, domSetTempSlider, boolTempReceived
 // show________
 const showIndexData = function (data) {
     domCurrentTemp.innerHTML = data.current_temperature + '°C';
-    if (boolTempReceived == false){
+    if (boolTempReceived == false) {
         boolTempReceived = true;
-    domSetTemp.innerHTML = data.set_temperature + '°C';
-    domSetTempSlider.value = data.set_temperature;
+        domSetTemp.innerHTML = data.set_temperature + '°C';
+        domSetTempSlider.value = data.set_temperature;
     }
 };
 const showSetTempDisplay = function () {
@@ -42,19 +42,19 @@ const init = function () {
     socket.on('index_emit', function (data) {
         showIndexData(data);
     });
-    domSetTempSlider.oninput = function(){
+    domSetTempSlider.oninput = function () {
         domSetTemp.innerHTML = this.value + '°C';
     };
-    document.getElementById('minus').addEventListener('click', function(){
+    document.getElementById('minus').addEventListener('click', function () {
         domSetTempSlider.value = parseFloat(domSetTempSlider.value) - 0.5;
         domSetTemp.innerHTML = domSetTempSlider.value + '°C';
     });
-    document.getElementById('plus').addEventListener('click', function(){
+    document.getElementById('plus').addEventListener('click', function () {
         domSetTempSlider.value = parseFloat(domSetTempSlider.value) + 0.5;
         console.log(domSetTempSlider.value)
         domSetTemp.innerHTML = domSetTempSlider.value + '°C';
     });
-    document.getElementById('save').addEventListener('click', function(){
+    document.getElementById('save').addEventListener('click', function () {
         socket.emit('change-temp', domSetTempSlider.value);
         document.getElementById('confirm').innerHTML = 'Temperature Saved!'
     })
