@@ -1,5 +1,4 @@
 const IP = '169.254.10.1:5000';
-const socket = io.connect(IP);
 let domEvents
 //#region ***********  Callback - HTML Generation (After select) or on socket event ***********
 // show________
