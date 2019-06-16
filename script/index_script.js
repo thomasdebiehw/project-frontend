@@ -6,9 +6,9 @@ let domAlarmStatus, domHeatingStatus, domAlarmRaisedEvents, domCurrentTemp, domS
 const showIndexData = function (data) {
     console.log(data)
     domHeatingStatus.innerHTML = data.heating_status;
-    domAlarmStatus.innerHTML = data.alarm_status;
-    domCurrentTemp.innerHTML = data.current_temperature;
-    domSetTemp.innerHTML = data.set_temperature;
+    domAlarmStatus.innerHTML = data.alarm_status + '<br>ALARM STATUS';
+    domCurrentTemp.innerHTML = data.current_temperature + '<br>CURRENT';
+    domSetTemp.innerHTML = data.set_temperature + '<br>SET';
 };
 const showSetTempDisplay = function () {
     domSetTempDisp.innerHTML = `<p><form>
@@ -45,7 +45,7 @@ const showNewAlarmRaisedEvents = function (data) {
         });
     }
     else {
-        domAlarmRaisedEvents.innerHTML = '<h3>No events</h3>';
+        domAlarmRaisedEvents.innerHTML = '<i class="fas fa-check-circle fa-3x"></i><h3 class="u-mb-clear">No events</h3>';
     }
 }
 
