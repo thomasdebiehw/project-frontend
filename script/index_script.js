@@ -1,6 +1,6 @@
 const IP = '169.254.10.1:5000';
 const socket = io.connect(IP);
-let domAlarmStatus, domHeatingStatus, domAlarmRaisedEvents, domCurrentTemp, domSetTemp, domSetTempDisp, domHeatingLink
+let domAlarmStatus, domHeatingStatus, domAlarmRaisedEvents, domCurrentTemp, domSetTemp, domSetTempDisp, domHeatingLink, domAlarmDesc
 //#region ***********  Callback - HTML Generation (After select) or on socket event ***********
 // show________
 const showIndexData = function (data) {
@@ -20,32 +20,21 @@ const showSetTempDisplay = function () {
         domSetTempDisp.innerHTML = '';
     });
 };
-const setEventAck = function (data) {
-    console.log('ack')
-    socket.emit('acknowledge_event', data)
-
-}
 const showNewAlarmRaisedEvents = function (data) {
     console.log(data);
-    elementArr = [];
-    if (data.length != 0) {
-        domAlarmRaisedEvents.innerHTML = `<p>`;
-        data.forEach(element => {
-            domAlarmRaisedEvents.innerHTML += `<div id="${element[0]}">${element[0]} ${element[1]} ${element[2]} ${element[3]} ${element[4]} ${element[5]}</div><br>`;
-            elementArr.push(element[0])
-
-        });
-        console.log(elementArr);
-
+    if (data.empty == false) {
+        domAlarmRaisedEvents.innerHTML = `<p><i class="fas fa-times-circle fa-4x red"></i>`;
+        domAlarmRaisedEvents.innerHTML += `<h3 class="u-mb-clear">ALARM AT ${data.time}</h3><br>`;
         domAlarmRaisedEvents.innerHTML += `</p>`;
-        elementArr.forEach(element => {
-            document.getElementById(element).addEventListener('click', function () {
-                setEventAck(element);
-            });
+        domAlarmDesc.innerHTML = `<p>${data.sensor} set off the alarm at ${data.time}. Check event log</p>`
+        domAlarmDesc.innerHTML += '<input type="button" id="clear-btn" value="CLEAR ALARM STATUS">'
+        document.getElementById('clear-btn').addEventListener('click', function(){
+            socket.emit("clear-alarm-status");
         });
     }
     else {
-        domAlarmRaisedEvents.innerHTML = '<i class="fas fa-check-circle fa-3x"></i><h3 class="u-mb-clear">No events</h3>';
+        domAlarmRaisedEvents.innerHTML = '<i class="fas fa-check-circle fa-4x"></i><h3 class="u-mb-clear">No events</h3>';
+        domAlarmDesc.innerHTML = '';
     }
 }
 
@@ -68,6 +57,7 @@ const init = function () {
     domSetTemp = document.getElementById('set-temperature');
     domSetTempDisp = document.getElementById('change-temperature');
     domHeatingLink = document.getElementById('heating-link');
+    domAlarmDesc = document.getElementById('alarm-desc');
     domAlarmStatus.addEventListener('click', function () {
         socket.emit('toggle_alarm');
     })

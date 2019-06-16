@@ -159,6 +159,13 @@ a:focus {
 
 }
 
+.red{
+  color: #CC0C0C;
+}
+
+#alarm-desc{
+  color: #F22727;
+}
 /*
     Objects: Layout
     ---

@@ -4,37 +4,19 @@ let domEvents
 //#region ***********  Callback - HTML Generation (After select) or on socket event ***********
 // show________
 
-const setEventAck = function(data){
-    console.log('ack')
-    socket.emit('acknowledge_event', data)
-    getEvents();
-
-}
 const showEvents = function(data) {
     console.log(data);
     elementArr = [];
     domEvents.innerHTML = `<p>`;
     data.forEach(element => {
         domEvents.innerHTML += `<div>Timestamp: ${element.eventdatetime}<br>Type: ${element.eventtype}<br>Component: ${element.componentname}<br>User: ${element.username}<br>`;
-        if (element.acknowledged != 1){
-            domEvents.innerHTML+= `<button type="button" id="${element.idevent}">Mark as read</button></div><br><br>`
-            elementArr.push(element.idevent)
-        }
-        else{
-            domEvents.innerHTML+= `</div><br>`
-        }
+        domEvents.innerHTML+= `</div><br>`
         
 
     });
     
     domEvents.innerHTML += `</p>`;
     console.log(elementArr)
-    elementArr.forEach(element => {
-        document.getElementById(element).addEventListener('click', function(){
-            setEventAck(element);
-            console.log(element)
-        });
-    });
 }
 
 //#endregion
