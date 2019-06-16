@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Alarmostat - temperature</title>
-    <meta name="description" content="Alarmostat temperature settings page">
+    <title>Alarmostat - temperatures</title>
+    <meta name="description" content="Alarmostat temperature history page">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -22,7 +22,7 @@
     <script src="https://kit.fontawesome.com/4591184e87.js"></script>
     <script defer src="script/dataHandler.js"></script>
     <script defer src="script/nav_script.js"></script>
-    <script defer src="script/temp_script.js"></script>
+    <script defer src="script/temphistory_script.js"></script>
 </head>
 
 <body>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div class="c-header__title">
-                    <h2 class="u-text-center">Temperature</h2>
+                    <h2 class="u-text-center">Temperature history</h2>
                 </div>
                 <div class="c-header__nav">
                     <nav class="c-nav">
@@ -148,27 +148,11 @@
             </ul>
         </nav>
     </div>
-    <div class="c-data-center">
-        <i class="fas fa-thermometer-three-quarters fa-3x"></i>
-        <section>
-            <h2>Current temperature:</h2>
-            <h3 id="current-temp">22°C</h3>
-        </section>
-        <br>
-        <section>
-            <h2>Set temperature:</h2>
-            <h3 id="set-temp"></h3>
-            <div class="slidecontainer">
-                <i class="fas fa-minus" id="minus"></i>
-                <input type="range" min="5" max="50" value="23" step="0.5" class="slider" id="set-temperature-slider">
-                <i class="fas fa-plus" id="plus"></i>
-            </div>
-            <br>
-            <br>
-            <input type="button" class="c-save-button" id="save" value="Set temperature">
-            <div id="confirm"></div>
-        </section>
-    </div>
+    <div id="measurements" class="c-events">No history</div>
+    <div id="measurements-desktop" class="c-events-desktop">No history</div>
+    <footer>
+        <p> <strong>Alarmostat</strong></p>
+    </footer>
 </body>
 
 </html>
