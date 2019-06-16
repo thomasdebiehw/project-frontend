@@ -1,4 +1,5 @@
-const IP = '169.254.10.1:5000';
+const IP = location.hostname + ':5000';
+console.log(IP)
 const socket = io.connect(IP);
 let domCurrentTemp, domSetTemp, domSetTempSlider, boolTempReceived
 //#region ***********  Callback - HTML Generation (After select) or on socket event ***********
