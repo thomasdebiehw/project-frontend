@@ -13,7 +13,7 @@ const showIndexData = function (data) {
 const showSetTempDisplay = function () {
     domSetTempDisp.innerHTML = `<p><form>
       <input type="number" name="temperature" min="1" max="100" step="0.5" id="temp-val">
-      <input type="button" id="send-temp" value="Set temperature">
+      <input type="button" id="send-temp" class="c-save-button" value="Set temperature">
       </form></p>`;
     document.getElementById('send-temp').addEventListener('click', function () {
         socket.emit('change-temp', document.getElementById('temp-val').value);

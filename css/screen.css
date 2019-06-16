@@ -10,7 +10,7 @@ html {
   font-size: 16px;
   line-height: 1.5;
   font-family: 'Open Sans', sans-serif;
-  color: #111;
+  color: #30332E;
   padding: 24px 24px 0;
   box-sizing: border-box;
 
@@ -153,21 +153,18 @@ i{
 }
 
 a {
-  color: RoyalBlue;
+  color: inherit;
   transition: all .1s ease-in-out;
+  text-decoration: none;
 
 }
 
 
-a:visited,
-a:active {
-  color: BlueViolet;
-
-}
 
 a:hover,
 a:focus {
-  color: Crimson;
+  font-weight: bolder;
+  color: #484D45;
 
 }
 
@@ -177,6 +174,12 @@ a:focus {
 
 #alarm-desc{
   color: #F22727;
+}
+input[type=number]{
+  border: 1px solid #77E623;
+  border-radius: 24px;
+  padding: 5px;
+  text-align: left;
 }
 /*
     Objects: Layout
@@ -782,6 +785,15 @@ a:focus {
   background-color: #F45555;
   border: none;
   padding: 10px 35px;
+  color: white;
+  border-radius: 24px;
+  font-weight: bold;
+}
+
+.c-save-button{
+  background-color: #6ACC1F;
+  border: none;
+  padding: 10px 20px;
   color: white;
   border-radius: 24px;
   font-weight: bold;

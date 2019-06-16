@@ -40,7 +40,7 @@ const init = function () {
     domWalkin = document.getElementById('walkin');
     domWalkin.innerHTML = `<p><form>Walk-in timeout: 
     <input type="number" name="timeout" min="1" max="100" step="1" id="walkin-val"> seconds 
-    <input type="button" id="send-walkin" value="Save">
+    <input type="button" id="send-walkin" class="c-save-button" value="Save">
     </form></p>`;
     document.getElementById('send-walkin').addEventListener('click', function () {
         socket.emit('change-walkin', document.getElementById('walkin-val').value);
@@ -49,7 +49,7 @@ const init = function () {
     domWalkout = document.getElementById('walkout');
     domWalkout.innerHTML = `<p><form>Walk-out timeout: 
     <input type="number" name="timeout" min="1" max="100" step="1" id="walkout-val"> seconds 
-    <input type="button" id="send-walkout" value="Save">
+    <input type="button" id="send-walkout" class="c-save-button" value="Save">
     </form></p>`;
     document.getElementById('send-walkout').addEventListener('click', function () {
         socket.emit('change-walkout', document.getElementById('walkout-val').value);
