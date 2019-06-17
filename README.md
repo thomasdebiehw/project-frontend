@@ -2,6 +2,8 @@
 This is the frontend for my Alarmostat project. It's a site that connects to a Flask backend via socketio and standard routes.
 link to the backend: https://github.com/thomasdebiehw/project-backend
 
+Instructions to build the Alarmostat can be found here: https://www.instructables.com/id/Alarmostat/
+
 Install the Apache webserver on your Pi:
 ```
 $: sudo apt-get update
